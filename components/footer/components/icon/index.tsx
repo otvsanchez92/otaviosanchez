@@ -1,17 +1,16 @@
 import React from 'react';
-import { withTheme } from 'styled-components';
 
-import { themeDefault } from '../../../../styles/theme';
-import { IconComponent } from './style';
-import { Props } from './types';
+interface Props {
+    open: boolean;
+}
 
-const Icon = ({ open }: Props): JSX.Element => {
+const Icon = ({ open }: Props): React.ReactElement => {
     return (
-        <IconComponent>
+        <div className="h-[40px] w-[40px]">
             <svg
                 width="100"
                 height="100"
-                className={`${open ? 'opened' : ''} `}
+                className={open ? 'opened' : ''}
                 viewBox="0 0 100 100">
                 <path
                     className="line line1"
@@ -23,12 +22,8 @@ const Icon = ({ open }: Props): JSX.Element => {
                     d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942"
                 />
             </svg>
-        </IconComponent>
+        </div>
     );
 };
 
-Icon.defaultProps = {
-    theme: themeDefault
-};
-
-export default withTheme(Icon);
+export default Icon;

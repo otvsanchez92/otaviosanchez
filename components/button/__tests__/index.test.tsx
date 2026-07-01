@@ -1,20 +1,22 @@
-// test/pages/index.test.js
-
-import { fireEvent, render, screen } from '@testing-library/react';
-import React from 'react';
-
-import Button from '../';
+import React from 'react'
+import { render, screen, fireEvent } from '@testing-library/react'
+import Button from '../index'
 
 describe('Button', () => {
-    it('should render and click', () => {
-        const onClick = jest.fn();
-        render(<Button onClick={onClick}> ABC </Button>);
+  it('renders children', () => {
+    render(<Button>Click me</Button>)
+    expect(screen.getByText('Click me')).toBeInTheDocument()
+  })
 
-        const text = screen.getByText(/ABC/i);
+  it('calls onClick when clicked', () => {
+    const onClick = jest.fn()
+    render(<Button onClick={onClick}>Click me</Button>)
+    fireEvent.click(screen.getByText('Click me'))
+    expect(onClick).toHaveBeenCalled()
+  })
 
-        fireEvent.click(text);
-
-        expect(text).toBeTruthy();
-        expect(onClick).toBeCalled();
-    });
-});
+  it('renders as link when href is provided', () => {
+    render(<Button href="https://example.com">Link</Button>)
+    expect(screen.getByRole('link')).toHaveAttribute('href', 'https://example.com')
+  })
+})

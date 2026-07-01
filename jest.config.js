@@ -1,12 +1,8 @@
-module.exports = {
-    testEnvironment: 'jsdom',
-    collectCoverageFrom: ['**/*.{js,jsx,ts,tsx}', '!**/*.d.ts', '!**/node_modules/**'],
-    testPathIgnorePatterns: ['/node_modules/', '/.next/'],
-    transform: {
-        '^.+\\.(js|jsx|ts|tsx)$': '<rootDir>/node_modules/babel-jest'
-    },
-    transformIgnorePatterns: ['/node_modules/', '^.+\\.module\\.(css|sass|scss)$'],
-    moduleNameMapper: {
-        '^.+\\.module\\.(css|sass|scss)$': 'identity-obj-proxy'
-    }
-};
+const nextJest = require('next/jest')
+const createJestConfig = nextJest({ dir: './' })
+
+module.exports = createJestConfig({
+  testEnvironment: 'jsdom',
+  setupFilesAfterFramework: ['<rootDir>/jest.setup.ts'],
+  testPathIgnorePatterns: ['/node_modules/', '/.next/'],
+})

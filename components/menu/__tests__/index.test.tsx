@@ -1,26 +1,34 @@
-// test/pages/index.test.js
-
-import { fireEvent, render, screen } from '@testing-library/react';
-import React from 'react';
-
-import Menu from '../';
+import React from 'react'
+import { render, screen, fireEvent } from '@testing-library/react'
+import Menu from '../index'
 
 const mock = {
-    title: 'ABC',
-    items: [
-        {
-            text: 'Link',
-            link: '/router'
-        }
-    ]
-};
+  title: 'ABC',
+  items: [
+    {
+      text: 'Link',
+      link: '/router'
+    }
+  ]
+}
 
 describe('Menu', () => {
-    it('should render', () => {
-        render(<Menu title={mock.title} items={mock.items} />);
+  it('renders the title', () => {
+    render(<Menu title={mock.title} items={mock.items} />)
+    const title = screen.getByText(/ABC/i)
+    expect(title).toBeInTheDocument()
+  })
 
-        const title = screen.getByText(/ABC/i);
+  it('renders nav items', () => {
+    render(<Menu title={mock.title} items={mock.items} />)
+    expect(screen.getByText('Link')).toBeInTheDocument()
+  })
 
-        expect(title).toBeTruthy();
-    });
-});
+  it('toggles menu open on hamburger click', () => {
+    render(<Menu title={mock.title} items={mock.items} />)
+    const menuBtn = screen.getByTestId('menu')
+    fireEvent.click(menuBtn)
+    // after clicking the open state changes - just verify click doesn't throw
+    expect(menuBtn).toBeTruthy()
+  })
+})

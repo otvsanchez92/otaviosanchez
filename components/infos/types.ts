@@ -1,7 +1,7 @@
 export interface Props {
-    title: string;
+    title?: string;
     titleProject: string;
-    body: string[];
-    npmProjects: any;
-    githubProjects: any;
+    body?: string[];
+    npmProjects?: unknown;
+    githubProjects?: unknown;
 }

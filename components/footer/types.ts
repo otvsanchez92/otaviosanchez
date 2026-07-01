@@ -1,4 +1,6 @@
+import React from 'react';
+
 export interface Props {
-    children: JSX.Element | JSX.Element[];
-    content: JSX.Element | JSX.Element[];
+    children: React.ReactNode;
+    content?: React.ReactNode;
 }

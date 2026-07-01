@@ -1,20 +1,50 @@
-import React from 'react';
-import { withTheme } from 'styled-components';
+'use client'
+import React from 'react'
+import { cn } from '../../utils/cn'
 
-import { themeDefault } from '../../styles/theme';
-import { ButtonComponent } from './style';
-import { Props } from './types';
+interface ButtonProps {
+  children: React.ReactNode
+  onClick?: () => void
+  type?: 'default' | 'alternative' | 'transparent'
+  href?: string
+  target?: string
+  'data-testid'?: string
+  id?: string
+}
 
-const Button = ({ children, onClick, type = 'default' }: Props) => {
+export function Button({ children, onClick, type = 'default', href, target, 'data-testid': dataTestId, id }: ButtonProps) {
+  const baseClasses = 'inline-flex items-center justify-center px-8 py-3 font-["PlexusSans-Regular",sans-serif] text-sm cursor-pointer transition-all duration-300 border-none outline-none no-underline'
+
+  const typeClasses = {
+    default: 'bg-white text-[#333333] hover:opacity-70',
+    alternative: 'bg-[#5652CC] text-white hover:bg-[#33317a]',
+    transparent: 'bg-transparent text-[#333333] border border-[#333333] hover:opacity-70',
+  }
+
+  if (href) {
     return (
-        <ButtonComponent type={type} onClick={onClick}>
-            {children}
-        </ButtonComponent>
-    );
-};
+      <a
+        href={href}
+        target={target}
+        className={cn(baseClasses, typeClasses[type])}
+        data-testid={dataTestId}
+        id={id}
+      >
+        {children}
+      </a>
+    )
+  }
 
-Button.defaultProps = {
-    theme: themeDefault
-};
+  return (
+    <button
+      onClick={onClick}
+      className={cn(baseClasses, typeClasses[type])}
+      data-testid={dataTestId}
+      id={id}
+    >
+      {children}
+    </button>
+  )
+}
 
-export default withTheme(Button);
+export default Button

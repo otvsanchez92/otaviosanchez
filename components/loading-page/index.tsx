@@ -1,35 +1,21 @@
-import { useRouter } from 'next/router';
-import React, { useEffect, useState } from 'react';
-import { withTheme } from 'styled-components';
+'use client'
+import React, { useEffect, useState } from 'react'
 
-import { themeDefault } from '../../styles/theme';
-import { BlockMain } from './style';
+export function LoadingPage() {
+  const [isLoading, setIsLoading] = useState(true)
 
-const LoadingPage = (): JSX.Element => {
-    const [isLoading, setIsLoading] = useState(true);
-    const router = useRouter();
+  useEffect(() => {
+    setIsLoading(false)
+  }, [])
 
-    useEffect(() => {
-        router.isReady && setIsLoading(false);
-    }, [router.isReady]);
+  return (
+    <div
+      className="transition-all duration-[2s] ease-out fixed w-screen h-screen bg-[#5652CC] z-[100] top-0 left-0"
+      style={{
+        top: isLoading ? '0' : '-100%',
+      }}
+    />
+  )
+}
 
-    return (
-        <BlockMain
-            style={{
-                position: 'fixed',
-                width: '100vw',
-                height: '100vh',
-                backgroundColor: '#fff',
-                top: 0,
-                left: 0
-            }}
-            loading={isLoading}
-        />
-    );
-};
-
-LoadingPage.defaultProps = {
-    theme: themeDefault
-};
-
-export default withTheme(LoadingPage);
+export default LoadingPage

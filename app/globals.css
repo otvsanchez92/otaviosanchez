@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "PlexusSans-Bold";
+  src: url("/fonts/PlexusSans-Bold.otf") format("opentype");
+  font-weight: 800;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PlexusSans-Regular";
+  src: url("/fonts/PlexusSans-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PlexusSans-ExtraLight";
+  src: url("/fonts/PlexusSans-ExtraLight.otf") format("opentype");
+  font-weight: 200;
+  font-display: swap;
+}
+
+@theme {
+  --color-main: #5652CC;
+  --color-main-dark: #33317a;
+  --color-text: #333333;
+  --color-text-alt: #A3A9D0;
+  --color-warning: #FC780B;
+  --color-bg: #efefef;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: "PlexusSans-Regular", sans-serif;
+  color: #333333;
+}
+
+a {
+  color: #333333;
+  text-decoration: none;
+  transition: opacity 0.8s, color 0.8s;
+  font-family: "PlexusSans-Regular", sans-serif;
+}
+
+a:hover {
+  opacity: 0.5;
+  color: #FC780B;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Typing animation for banner */
+@keyframes typing {
+  0% { width: 0 }
+  30% { width: 100% }
+  70% { width: 100% }
+  85% { width: 0 }
+  100% { width: 0 }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #333333 }
+}
+
+.typing-text {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid;
+  width: 0;
+  display: inline-block;
+  animation: typing 4s steps(20, end) infinite, blink-caret 0.75s step-end infinite;
+}

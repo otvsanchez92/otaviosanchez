@@ -1,20 +1,38 @@
-import React from 'react';
-import { withTheme } from 'styled-components';
+'use client'
+import React from 'react'
 
-import { themeDefault } from '../../styles/theme';
-import { Background, BackgroundOut, MainContent } from './style';
-import { Props } from './types';
+interface Props {
+  children: React.ReactNode
+  activeEffect: boolean
+}
 
-const Content = ({ activeEffect, children }: Props): JSX.Element => (
+export function Content({ activeEffect, children }: Props) {
+  return (
     <>
-        <BackgroundOut activeEffect={activeEffect} />
-        <Background activeEffect={activeEffect} />
-        <MainContent>{children}</MainContent>
+      {/* BackgroundOut - purple/alt layer */}
+      <div
+        className="transition-all duration-1000 ease-in-out bg-[#a3a9d0] w-[200%] h-screen fixed z-0"
+        style={{
+          transform: activeEffect ? 'rotate(-20deg)' : 'rotate(-3deg)',
+          top: activeEffect ? '0' : '-98%',
+          left: activeEffect ? '-40%' : '-20%',
+        }}
+      />
+      {/* Background - main grey layer */}
+      <div
+        className="transition-all duration-1000 ease-in-out bg-[#efefef] w-[200%] h-screen fixed z-0"
+        style={{
+          transform: activeEffect ? 'rotate(0)' : 'rotate(-12deg)',
+          top: activeEffect ? '0' : '-98%',
+          left: activeEffect ? '0' : '-40%',
+        }}
+      />
+      {/* Main content on top */}
+      <div className="relative z-[1]">
+        {children}
+      </div>
     </>
-);
+  )
+}
 
-Content.defaultProps = {
-    theme: themeDefault
-};
-
-export default withTheme(Content);
+export default Content

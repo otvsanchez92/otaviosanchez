@@ -1,6 +1,8 @@
+import React from 'react';
+
 export interface Props {
-    children: JSX.Element;
-    onClick: any;
-    type: 'default' | 'alert' | 'outline' | 'transparent';
-    theme: any;
+    children: React.ReactNode;
+    onClick?: () => void;
+    type?: 'default' | 'alert' | 'outline' | 'transparent';
+    theme?: unknown;
 }

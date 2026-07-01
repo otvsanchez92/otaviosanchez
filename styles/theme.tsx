@@ -1,37 +1,22 @@
-import React from 'react';
-import { ThemeProvider } from 'styled-components';
+export const theme = {
+  colors: {
+    main: '#5652CC',
+    mainDark: '#33317a',
+    text: '#333333',
+    textAlt: '#A3A9D0',
+    warning: '#FC780B',
+    bg: '#efefef',
+    bgAlt: '#a3a9d0',
+  },
+  fontSizes: {
+    xSmall: '10px',
+    small: '12px',
+    medium: '14px',
+    large: '16px',
+    xLarge: '20px',
+    xxLarge: '28px',
+    xxxLarge: '150px',
+  }
+} as const
 
-import Fonts from './fonts';
-import Globals from './globals';
-
-export const themeDefault = {
-    colors: {
-        main: '#5652CC',
-        mainDark: '#33317a',
-        text: '#333333',
-        textAlternative: '#A3A9D0',
-        warning: '#FC780B'
-    },
-    fonts: ['PlexusSans-Regular', 'sans-serif', 'Roboto'],
-    fontSizes: {
-        xSmall: '0.6em',
-        small: '0.8em',
-        medium: '0.9em',
-        normal: '1.0em',
-        large: '1.2em',
-        xLarge: '1.6em',
-        xxLarge: '2em'
-    }
-};
-
-const Theme = ({ children }: { children: JSX.Element }): JSX.Element => (
-    <>
-        <ThemeProvider theme={themeDefault}>
-            <Fonts />
-            <Globals />
-            {children}
-        </ThemeProvider>
-    </>
-);
-
-export default Theme;
+export type Theme = typeof theme

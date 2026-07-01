@@ -1,64 +1,73 @@
-import React, { useEffect, useState } from 'react';
-import { withTheme } from 'styled-components';
+'use client'
+import React, { useEffect, useState } from 'react'
+import type { GitHubRepo } from '../../services/github'
+import type { NpmPackage } from '../../services/npm'
+import formatDate from '../../utils/format-date'
+import Projects from '../projects'
 
-import { themeDefault } from '../../styles/theme';
-import formatDate from '../../utils/format-date';
-import Projects from '../projects';
-import { Article, Container, ProjectsContainer, Section, Title, TitleProjects } from './style';
-import { Props } from './types';
+interface ProjectItem {
+  link: string
+  icon: string
+  text?: string
+  date: string
+  title: string
+}
 
-const Info = ({ title, titleProject, npmProjects, githubProjects }: Props): JSX.Element => {
-    const [projects, setProjects] = useState([]);
+interface Props {
+  titleProject: string
+  npmProjects: NpmPackage[]
+  githubProjects: GitHubRepo[]
+}
 
-    useEffect(() => {
-        let npm = [];
-        let github = [];
-        if (npmProjects) {
-            npm = npmProjects?.objects?.map((item) => ({
-                link: item?.package?.links?.npm,
-                icon: 'npm',
-                text: item?.package?.description,
-                date: formatDate(item?.package?.date),
-                title: item?.package?.name
-            }));
-        }
-        if (githubProjects) {
-            github = githubProjects
-                ?.map((item) => ({
-                    link: item?.html_url,
-                    icon: 'github',
-                    date: formatDate(item?.pushed_at),
-                    title: item?.name
-                }))
-                .sort(function (a, b) {
-                    if (a.date < b.date) {
-                        return 1;
-                    }
-                    if (a.date > b.date) {
-                        return -1;
-                    }
-                    return 0;
-                });
-        }
+export function Infos({ titleProject, npmProjects, githubProjects }: Props) {
+  const [projects, setProjects] = useState<ProjectItem[]>([])
 
-        npm = npm.concat(github.slice(0, 7));
-        setProjects(npm);
-    }, [npmProjects, githubProjects]);
+  useEffect(() => {
+    let npm: ProjectItem[] = []
+    let github: ProjectItem[] = []
 
-    return (
-        <Section>
-            <Container>
-                <ProjectsContainer>
-                    <TitleProjects>{titleProject}</TitleProjects>
-                    <Projects items={projects} />
-                </ProjectsContainer>
-            </Container>
-        </Section>
-    );
-};
+    if (npmProjects && npmProjects.length > 0) {
+      npm = npmProjects.map((item) => ({
+        link: item?.package?.links?.npm,
+        icon: 'npm',
+        text: item?.package?.description,
+        date: formatDate(item?.package?.date),
+        title: item?.package?.name
+      }))
+    }
 
-Info.defaultProps = {
-    theme: themeDefault
-};
+    if (githubProjects && githubProjects.length > 0) {
+      github = githubProjects
+        .map((item) => ({
+          link: item?.html_url,
+          icon: 'github',
+          date: formatDate(item?.pushed_at),
+          title: item?.name,
+          text: item?.description || undefined
+        }))
+        .sort((a, b) => {
+          if (a.date < b.date) return 1
+          if (a.date > b.date) return -1
+          return 0
+        })
+    }
 
-export default withTheme(Info);
+    const combined = npm.concat(github.slice(0, 7))
+    setProjects(combined)
+  }, [npmProjects, githubProjects])
+
+  return (
+    <section className="w-screen flex items-center py-12 bg-white">
+      <div className="w-[90%] mx-auto max-w-[1280px] flex max-md:flex-col">
+        <div className="w-full mx-auto">
+          <h3 className="m-0 text-[#5652CC] text-center font-semibold font-['PlexusSans-Bold',sans-serif] p-0 mr-[30px] mb-4">
+            {titleProject}
+          </h3>
+          <Projects items={projects} />
+        </div>
+      </div>
+    </section>
+  )
+}
+
+export default Infos

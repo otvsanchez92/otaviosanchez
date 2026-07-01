@@ -1,26 +1,26 @@
-import React from 'react';
-import { withTheme } from 'styled-components';
+import React from 'react'
 
-import { themeDefault } from '../../styles/theme';
-import { Article, Body, Container, Section, Title } from './style';
-import { Props } from './types';
+interface Props {
+  title: string
+  infos: React.ReactNode
+}
 
-const About = ({ title, infos }: Props): JSX.Element => {
-    return (
-        <Section>
-            <Container>
-                <Title>Artigos</Title>
-                <Article>
-                    <Title>{title}</Title>
-                    <Body>{infos}</Body>
-                </Article>
-            </Container>
-        </Section>
-    );
-};
+export function Articles({ title, infos }: Props) {
+  return (
+    <section className="w-screen h-[calc(100vh-50px)] mt-[50px] bg-white py-[50px] box-border">
+      <section className="w-[90%] mx-auto max-w-[1280px]">
+        <h1 className="m-0 text-[#5652CC] font-semibold font-['PlexusSans-Bold',sans-serif] p-0 w-full text-center mr-[30px]">
+          Artigos
+        </h1>
+        <article className="w-[90%] mx-auto max-w-[1280px] [&_p]:font-['PlexusSans-ExtraLight',sans-serif] [&_p]:font-semibold">
+          <h1 className="m-0 text-[#5652CC] font-semibold font-['PlexusSans-Bold',sans-serif] p-0 w-full text-center mr-[30px]">
+            {title}
+          </h1>
+          <div>{infos}</div>
+        </article>
+      </section>
+    </section>
+  )
+}
 
-About.defaultProps = {
-    theme: themeDefault
-};
-
-export default withTheme(About);
+export default Articles
