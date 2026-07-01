@@ -1,0 +1,158 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - img "Lista do Lar" [ref=e5]
+        - generic [ref=e6]:
+          - generic [ref=e7]: Lista do Lar
+          - generic [ref=e8]: Planeje sua casa
+      - generic [ref=e9]:
+        - generic [ref=e10]: 100% Grátis
+        - link "Entrar" [ref=e11] [cursor=pointer]:
+          - /url: /login
+        - link "Criar conta" [ref=e12] [cursor=pointer]:
+          - /url: /cadastro
+    - main [ref=e13]:
+      - generic [ref=e15]:
+        - generic [ref=e16]:
+          - generic [ref=e19]: Gratuito para sempre — sem cartão
+          - heading "Organize o que precisa comprar para a sua casa." [level=1] [ref=e20]
+          - paragraph [ref=e21]: Crie listas por cômodo, compare preços, controle o orçamento e saiba exatamente o que já foi comprado e o que ainda falta.
+          - generic [ref=e22]:
+            - link "Começar grátis" [ref=e23] [cursor=pointer]:
+              - /url: /cadastro
+              - text: Começar grátis
+              - img [ref=e24]
+            - link "Já tenho conta" [ref=e26] [cursor=pointer]:
+              - /url: /login
+          - generic [ref=e27]:
+            - generic [ref=e28]:
+              - img [ref=e29]
+              - text: Sem limite de itens
+            - generic [ref=e31]:
+              - img [ref=e32]
+              - text: Sincronização em tempo real
+            - generic [ref=e34]:
+              - img [ref=e35]
+              - text: Compartilhe com parceiro
+        - generic [ref=e38]:
+          - generic [ref=e44]: listadolar.com.br/app
+          - generic [ref=e45]:
+            - generic [ref=e46]:
+              - img "Lista do Lar" [ref=e47]
+              - generic [ref=e48]: Lista do Lar
+            - generic [ref=e49]: OT
+          - generic [ref=e50]:
+            - generic [ref=e51]:
+              - generic [ref=e52]:
+                - generic [ref=e53]:
+                  - generic [ref=e54]: Apartamento
+                  - generic [ref=e55]: Apto Novo — 68m²
+                - generic [ref=e56]:
+                  - generic [ref=e57]: 58%
+                  - generic [ref=e58]: concluído
+              - generic [ref=e61]:
+                - generic [ref=e62]:
+                  - generic [ref=e63]: Estimado
+                  - generic [ref=e64]: R$ 18.400
+                - generic [ref=e65]:
+                  - generic [ref=e66]: Itens
+                  - generic [ref=e67]: 7/12
+                - generic [ref=e68]:
+                  - generic [ref=e69]: Cômodos
+                  - generic [ref=e70]: "4"
+            - generic [ref=e71]:
+              - generic [ref=e72]: Sala de Estar
+              - generic [ref=e73]:
+                - generic [ref=e74]:
+                  - generic [ref=e77]: Sofá 3 lugares
+                  - generic [ref=e78]:
+                    - generic [ref=e79]: R$ 2.400
+                    - generic [ref=e80]: Comprado
+                - generic [ref=e81]:
+                  - generic [ref=e84]: Rack para TV
+                  - generic [ref=e85]:
+                    - generic [ref=e86]: R$ 890
+                    - generic [ref=e87]: Pesquisando
+                - generic [ref=e88]:
+                  - generic [ref=e89]:
+                    - img [ref=e91]
+                    - generic [ref=e93]: Tapete 2x3m
+                  - generic [ref=e94]:
+                    - generic [ref=e95]: R$ 380
+                    - generic [ref=e96]: Instalado
+            - generic [ref=e97]:
+              - generic [ref=e98]: Quarto Principal
+              - generic [ref=e99]:
+                - generic [ref=e100]:
+                  - generic [ref=e101]:
+                    - img [ref=e103]
+                    - generic [ref=e105]: Cama casal
+                  - generic [ref=e106]:
+                    - generic [ref=e107]: R$ 1.800
+                    - generic [ref=e108]: Instalado
+                - generic [ref=e109]:
+                  - generic [ref=e112]: Guarda-roupa 6 portas
+                  - generic [ref=e113]:
+                    - generic [ref=e114]: R$ 2.100
+                    - generic [ref=e115]: Pesquisando
+                - generic [ref=e116]:
+                  - generic [ref=e119]: Luminária de teto
+                  - generic [ref=e120]:
+                    - generic [ref=e121]: R$ 320
+                    - generic [ref=e122]: A comprar
+      - generic [ref=e123]:
+        - paragraph [ref=e124]: Como funciona
+        - generic [ref=e125]:
+          - generic [ref=e126]:
+            - generic [ref=e127]: "01"
+            - generic [ref=e128]: Cadastre seu imóvel
+            - generic [ref=e129]: Crie um projeto para seu apartamento ou casa. Defina o orçamento total e comece a planejar.
+          - generic [ref=e130]:
+            - generic [ref=e131]: "02"
+            - generic [ref=e132]: Organize por cômodo
+            - generic [ref=e133]: Adicione sala, quarto, cozinha e outros ambientes. Cada cômodo tem sua própria lista e controle de gastos.
+          - generic [ref=e134]:
+            - generic [ref=e135]: "03"
+            - generic [ref=e136]: Acompanhe o progresso
+            - generic [ref=e137]: "Marque cada item conforme avança: pesquisando, comprado, instalado. Veja o percentual de conclusão em tempo real."
+      - generic [ref=e138]:
+        - paragraph [ref=e139]: Recursos
+        - generic [ref=e140]:
+          - generic [ref=e141]:
+            - generic [ref=e142]: 🛋️
+            - generic [ref=e143]: Listas por cômodo
+            - generic [ref=e144]: Sala, quarto, cozinha, banheiro — cada ambiente com sua própria lista e orçamento separado.
+          - generic [ref=e145]:
+            - generic [ref=e146]: 🔗
+            - generic [ref=e147]: Links de produtos
+            - generic [ref=e148]: Cole o link de qualquer loja. Compare preços entre lojas num mesmo item sem sair do app.
+          - generic [ref=e149]:
+            - generic [ref=e150]: 📊
+            - generic [ref=e151]: Controle de gastos
+            - generic [ref=e152]: Veja o total estimado, o que já foi pago e quanto ainda falta. Sem surpresas no final do mês.
+          - generic [ref=e153]:
+            - generic [ref=e154]: 📋
+            - generic [ref=e155]: Status de cada item
+            - generic [ref=e156]: Do "quero comprar" ao "instalado" — acompanhe cada item pela jornada completa de compra.
+          - generic [ref=e157]:
+            - generic [ref=e158]: 🤝
+            - generic [ref=e159]: Colaboração
+            - generic [ref=e160]: Compartilhe com parceiro ou familiar. Todos editam em tempo real, com sincronização automática.
+          - generic [ref=e161]:
+            - generic [ref=e162]: 📦
+            - generic [ref=e163]: Checklist de mudança
+            - generic [ref=e164]: "Lista de tarefas completa para não esquecer nada: documentos, serviços, contatos e mais."
+      - generic [ref=e166]:
+        - generic [ref=e167]: Gratuito para sempre
+        - heading "Pronto para sair da planilha?" [level=2] [ref=e168]
+        - paragraph [ref=e169]: Sem planilha, sem papel, sem cartão. Tudo organizado num só lugar — de graça.
+        - link "Criar minha conta grátis" [ref=e170] [cursor=pointer]:
+          - /url: /cadastro
+          - text: Criar minha conta grátis
+          - img [ref=e171]
+    - contentinfo [ref=e173]:
+      - generic [ref=e174]: © 2026 Lista do Lar
+      - link "Termos de uso" [ref=e176] [cursor=pointer]:
+        - /url: /termos
+  - alert [ref=e177]

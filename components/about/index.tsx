@@ -8,66 +8,86 @@ interface Props {
 }
 
 export function About({ title, body }: Props) {
-  const parallax = useParallax({ speed: 5 })
-  const parallaxAlternative = useParallax({ speed: 3 })
+  const layerPurpleRect = useParallax<HTMLDivElement>({ speed: 5 })
+  const layerOrangeDot  = useParallax<HTMLDivElement>({ speed: -4 })
+  const layerDots       = useParallax<HTMLDivElement>({ speed: 8 })
+  const layerPhoto      = useParallax<HTMLDivElement>({ speed: -3, rotate: [-3, 3], scale: [0.97, 1.03] })
 
   return (
-    <section id="sobre" className="w-screen flex items-center min-h-[80vh] relative py-8 box-border">
-      <div className="w-[90%] mx-auto max-w-[1280px] flex max-md:flex-col">
-        {/* Figure with parallax backgrounds */}
-        <figure className="w-1/2 mx-auto flex justify-center items-center relative max-md:w-full max-md:my-8">
-          <img
-            src="/images/otavio-sanchez.png"
-            alt="Foto do Otávio Sanchez"
-            title="Otávio Sanchez"
-            className="w-full max-w-[360px] z-[2]"
+    <section id="sobre" className="w-screen flex items-center min-h-[80vh] relative py-16 box-border overflow-hidden">
+      <div className="w-[90%] mx-auto max-w-[1280px] flex gap-12 max-md:flex-col">
+
+        {/* Figure */}
+        <figure className="w-1/2 flex justify-center items-center relative max-md:w-full max-md:mb-8 flex-shrink-0" style={{ minHeight: 420 }}>
+
+          {/* Purple filled rectangle — offset behind photo, moves down */}
+          <div
+            ref={layerPurpleRect.ref}
+            className="absolute z-[0] rotate-45"
+            style={{
+              width: 280,
+              height: 280,
+              backgroundColor: '#5652CC',
+              opacity: 0.15,
+              top: '15%',
+              left: '15%',
+            }}
           />
 
-          {/* Background purple squares - parallax */}
+          {/* Orange outline square — bottom-right, moves up */}
           <div
-            ref={parallax.ref as React.RefObject<HTMLDivElement>}
-            className="w-[255px] mx-auto rotate-45 absolute z-[1] mb-12 ml-4"
-            style={{ position: 'absolute' }}
+            ref={layerOrangeDot.ref}
+            className="absolute z-[1] rotate-45"
+            style={{
+              width: 100,
+              height: 100,
+              border: '3px solid #FC780B',
+              bottom: '18%',
+              right: '18%',
+            }}
+          />
+
+          {/* Dot grid — top-right, moves down faster */}
+          <div
+            ref={layerDots.ref}
+            className="absolute z-[1]"
+            style={{ top: '12%', right: '20%' }}
           >
-            <div
-              className="w-full h-full absolute rotate-45 top-0 right-0"
-              style={{ backgroundColor: '#5652CC', content: ' ' }}
-            />
-            {Array.from(Array(16).keys()).map((value) => (
-              <div key={value} className="w-[23%] pb-[23%] m-[1%] float-left" />
-            ))}
+            <div className="grid gap-[8px]" style={{ gridTemplateColumns: 'repeat(4, 1fr)' }}>
+              {Array.from({ length: 16 }).map((_, i) => (
+                <div key={i} className="w-[6px] h-[6px]" style={{ backgroundColor: '#A3A9D0' }} />
+              ))}
+            </div>
           </div>
 
-          {/* Background orange squares - parallax */}
-          <div
-            ref={parallaxAlternative.ref as React.RefObject<HTMLDivElement>}
-            className="w-[255px] mx-auto rotate-45 absolute z-[1] mb-8 ml-4"
-            style={{ position: 'absolute' }}
-          >
-            <div
-              className="w-full h-full absolute rotate-45 top-0 right-0"
-              style={{ backgroundColor: '#FC780B', content: ' ' }}
+          {/* Photo */}
+          <div ref={layerPhoto.ref} className="relative z-[2] max-w-[340px] w-full">
+            <img
+              src="/images/otavio-sanchez.png"
+              alt="Foto do Otávio Sanchez"
+              title="Otávio Sanchez"
+              className="w-full"
+              style={{ filter: 'drop-shadow(0 16px 40px rgba(86,82,204,0.3))' }}
             />
-            {Array.from(Array(16).keys()).map((value) => (
-              <div key={value} className="w-[23%] pb-[23%] m-[1%] float-left" />
-            ))}
           </div>
         </figure>
 
-        {/* Article text */}
-        <article className="w-1/2 mx-auto pr-[5%] text-justify box-border max-md:w-full max-md:mb-8" style={{ width: '50%' }}>
-          <h1 className="m-0 text-[#5652CC] font-semibold font-['PlexusSans-Bold',sans-serif] p-0">
+        {/* Text */}
+        <article className="w-1/2 flex flex-col justify-center max-md:w-full">
+          <h1 className="m-0 mb-6 text-[#5652CC] font-semibold font-['PlexusSans-Bold',sans-serif] p-0">
             {title}
           </h1>
           {body.map((text) => (
-            <p key={text} className="font-['PlexusSans-ExtraLight',sans-serif] font-semibold">{text}</p>
+            <p key={text} className="font-['PlexusSans-ExtraLight',sans-serif] font-semibold text-[#333] leading-relaxed mt-0 mb-4">
+              {text}
+            </p>
           ))}
         </article>
       </div>
 
-      {/* Triangle at the bottom */}
+      {/* Triangle */}
       <div
-        className="absolute bottom-0 left-0 inline-block w-0 h-0"
+        className="absolute bottom-0 left-0 w-0 h-0"
         style={{
           borderStyle: 'solid',
           borderWidth: '0 0 6vh 100vw',

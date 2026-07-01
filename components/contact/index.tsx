@@ -23,23 +23,27 @@ const renderIcon = (icon: string) => {
 
 export function Contact({ socialNetwork }: Props) {
   return (
-    <nav id="contato" className="w-[90%] mx-auto max-w-[1280px] py-[30px]">
-      <div>
-        <h3 className="m-0 text-white font-semibold p-0 w-full text-center mb-[30px]">Contato</h3>
-        <p className="m-0">Deseja entrar em contato comigo ou tem alguma dúvida?</p>
-        <p className="m-0">
-          Mande um email para{' '}
-          <a href="mailto:contato@otaviosanchez.com" className="text-[#A3A9D0]">contato@otaviosanchez.com</a>.
-        </p>
-        <div className="mt-[30px] text-sm">Ou acesse:</div>
-      </div>
-      <ul className="p-0 m-0 flex justify-center items-center">
+    <nav id="contato" className="w-[90%] mx-auto max-w-[1280px] py-10 text-center">
+      <h3 className="m-0 text-white font-semibold font-['PlexusSans-Bold',sans-serif] text-lg mb-6">Contato</h3>
+      <p className="m-0 text-white font-['PlexusSans-ExtraLight',sans-serif] font-semibold">
+        Deseja entrar em contato comigo ou tem alguma dúvida?
+      </p>
+      <p className="mt-2 mb-0 text-white font-['PlexusSans-ExtraLight',sans-serif] font-semibold">
+        Mande um email para{' '}
+        <a
+          href="mailto:sanchezotavio@gmail.com"
+          className="!text-[#FC780B] underline underline-offset-2 hover:!opacity-80"
+        >
+          sanchezotavio@gmail.com
+        </a>.
+      </p>
+
+      <p className="mt-8 mb-2 text-white text-sm font-['PlexusSans-ExtraLight',sans-serif] font-semibold">Ou acesse:</p>
+      <ul className="p-0 m-0 flex justify-center items-center gap-2">
         {socialNetwork?.map((item: Item) => (
           <li key={item.link} className="list-none hover:opacity-80">
             <a href={item.link} title={item.text}>
-              <div className="text-[#FC780B] font-['PlexusSans-Regular']">
-                {renderIcon(item.icon)}
-              </div>
+              {renderIcon(item.icon)}
             </a>
           </li>
         ))}

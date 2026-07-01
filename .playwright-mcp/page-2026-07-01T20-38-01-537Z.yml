@@ -1,0 +1,166 @@
+- generic [active] [ref=f5e1]:
+  - generic [ref=f5e2]:
+    - banner [ref=f5e3]:
+      - banner [ref=f5e4]:
+        - generic [ref=f5e5]:
+          - generic [ref=f5e6]:
+            - link "logo NeckChart" [ref=f5e7] [cursor=pointer]:
+              - /url: /
+              - heading "logo NeckChart" [level=6] [ref=f5e8]:
+                - img "logo" [ref=f5e9]
+                - generic [ref=f5e10]: NeckChart
+            - generic [ref=f5e11]:
+              - link "Common Scales" [ref=f5e12] [cursor=pointer]:
+                - /url: /scales
+                - text: Common Scales
+              - link "Editor" [ref=f5e13] [cursor=pointer]:
+                - /url: /editor
+                - text: Editor
+              - link "Instruments" [ref=f5e14] [cursor=pointer]:
+                - /url: /instruments
+                - text: Instruments
+          - generic [ref=f5e16]:
+            - combobox [ref=f5e17] [cursor=pointer]:
+              - img [ref=f5e19]
+            - textbox: en-US
+        - link "NeckChart – Fretboard Diagram, Scales & Online Guitar Tab Editor" [ref=f5e23] [cursor=pointer]:
+          - /url: /
+    - main [ref=f5e24]:
+      - generic [ref=f5e25]:
+        - generic [ref=f5e26]:
+          - heading "NeckChart – Fretboard Diagram, Scales & Online Guitar Tab Editor" [level=1] [ref=f5e27]
+          - heading "Build guitar tabs and visualize scales on guitar, bass, ukulele and any string instrument — free online tool" [level=6] [ref=f5e28]
+          - button "Open Editor" [ref=f5e29] [cursor=pointer]: Open Editor
+        - separator [ref=f5e30]
+        - generic [ref=f5e31]:
+          - heading "Common Scales" [level=4] [ref=f5e32]
+          - paragraph [ref=f5e33]: Choose a scale to visualize it on the fretboard
+          - generic [ref=f5e34]:
+            - generic [ref=f5e36]:
+              - generic [ref=f5e37]:
+                - heading "Major Scale" [level=6] [ref=f5e38]
+                - paragraph [ref=f5e39]: The most common scale in Western music. Foundation of classical, pop, rock and country. Visualize all major scale patterns and positions on guitar, bass, ukulele and more fretboards.
+                - generic [ref=f5e40]:
+                  - generic [ref=f5e41]: "Examples:"
+                  - paragraph [ref=f5e42]: C, D, E, F, G, A, B, C
+              - button "Explore scale" [ref=f5e43] [cursor=pointer]: Explore scale
+            - generic [ref=f5e45]:
+              - generic [ref=f5e46]:
+                - heading "Natural Minor Scale" [level=6] [ref=f5e47]
+                - paragraph [ref=f5e48]: The most used minor scale in music. Essential for rock, metal, classical and folk. See every position of the natural minor scale on guitar, bass, violin and any string instrument fretboard.
+                - generic [ref=f5e49]:
+                  - generic [ref=f5e50]: "Examples:"
+                  - paragraph [ref=f5e51]: C, D, Eb, F, G, Ab, Bb, C
+              - button "Explore scale" [ref=f5e52] [cursor=pointer]: Explore scale
+            - generic [ref=f5e54]:
+              - generic [ref=f5e55]:
+                - heading "Blues Scale" [level=6] [ref=f5e56]
+                - paragraph [ref=f5e57]: The signature scale of blues and rock guitar. Six notes with the flat fifth blue note. Visualize all positions on the fretboard and build guitar tabs with bends and slides.
+                - generic [ref=f5e58]:
+                  - generic [ref=f5e59]: "Examples:"
+                  - paragraph [ref=f5e60]: C, D#, E#, F#, G, A#, B#
+              - button "Explore scale" [ref=f5e61] [cursor=pointer]: Explore scale
+            - generic [ref=f5e63]:
+              - generic [ref=f5e64]:
+                - heading "Major Pentatonic Scale" [level=6] [ref=f5e65]
+                - paragraph [ref=f5e66]: Five-note scale widely used in country, pop and rock guitar solos. One of the most beginner-friendly scales. Explore all fretboard positions on guitar, bass and ukulele.
+                - generic [ref=f5e67]:
+                  - generic [ref=f5e68]: "Examples:"
+                  - paragraph [ref=f5e69]: C, D, E, G, A, C
+              - button "Explore scale" [ref=f5e70] [cursor=pointer]: Explore scale
+            - generic [ref=f5e72]:
+              - generic [ref=f5e73]:
+                - heading "Minor Pentatonic Scale" [level=6] [ref=f5e74]
+                - paragraph [ref=f5e75]: The go-to scale for rock, blues and jazz guitar solos. Five notes that work over almost any chord progression. View the complete fretboard diagram and build tabs.
+                - generic [ref=f5e76]:
+                  - generic [ref=f5e77]: "Examples:"
+                  - paragraph [ref=f5e78]: C, D#, E#, G, A#, C
+              - button "Explore scale" [ref=f5e79] [cursor=pointer]: Explore scale
+            - generic [ref=f5e81]:
+              - generic [ref=f5e82]:
+                - heading "Dorian Mode" [level=6] [ref=f5e83]
+                - paragraph [ref=f5e84]: Minor modal scale with a raised sixth. Used in jazz, funk and modern rock. Visualize the Dorian mode on guitar and bass fretboard — all positions and patterns.
+                - generic [ref=f5e85]:
+                  - generic [ref=f5e86]: "Examples:"
+                  - paragraph [ref=f5e87]: C, D, Eb, F, G, A, Bb, C
+              - button "Explore scale" [ref=f5e88] [cursor=pointer]: Explore scale
+            - generic [ref=f5e90]:
+              - generic [ref=f5e91]:
+                - heading "Mixolydian Mode" [level=6] [ref=f5e92]
+                - paragraph [ref=f5e93]: Major scale with a flat seventh. Widely used in blues, rock and Celtic music. Essential for dominant chord improvisation. See all Mixolydian patterns on the fretboard.
+                - generic [ref=f5e94]:
+                  - generic [ref=f5e95]: "Examples:"
+                  - paragraph [ref=f5e96]: C, D, E, F, G, A, Bb, C
+              - button "Explore scale" [ref=f5e97] [cursor=pointer]: Explore scale
+            - generic [ref=f5e99]:
+              - generic [ref=f5e100]:
+                - heading "Lydian Mode" [level=6] [ref=f5e101]
+                - paragraph [ref=f5e102]: Major scale with an augmented fourth. Gives a dreamy, ethereal sound used in film scores and progressive rock. Explore all Lydian mode positions on the guitar fretboard.
+                - generic [ref=f5e103]:
+                  - generic [ref=f5e104]: "Examples:"
+                  - paragraph [ref=f5e105]: C, D, E, F#, G, A, B, C
+              - button "Explore scale" [ref=f5e106] [cursor=pointer]: Explore scale
+            - generic [ref=f5e108]:
+              - generic [ref=f5e109]:
+                - heading "Phrygian Mode" [level=6] [ref=f5e110]
+                - paragraph [ref=f5e111]: Minor scale with a flat second giving a Spanish or flamenco feel. Popular in metal, flamenco and Middle Eastern music. Visualize Phrygian mode on guitar and bass.
+                - generic [ref=f5e112]:
+                  - generic [ref=f5e113]: "Examples:"
+                  - paragraph [ref=f5e114]: C, Db, Eb, F, G, Ab, Bb, C
+              - button "Explore scale" [ref=f5e115] [cursor=pointer]: Explore scale
+            - generic [ref=f5e117]:
+              - generic [ref=f5e118]:
+                - heading "Aeolian Mode" [level=6] [ref=f5e119]
+                - paragraph [ref=f5e120]: The Aeolian mode is identical to the natural minor scale. Fundamental in rock, pop and classical music. See all positions of the Aeolian mode on any string instrument fretboard.
+                - generic [ref=f5e121]:
+                  - generic [ref=f5e122]: "Examples:"
+                  - paragraph [ref=f5e123]: C, D, Eb, F, G, Ab, Bb, C
+              - button "Explore scale" [ref=f5e124] [cursor=pointer]: Explore scale
+        - separator [ref=f5e125]
+        - generic [ref=f5e126]:
+          - heading "Instruments" [level=4] [ref=f5e127]
+          - paragraph [ref=f5e128]: Choose an instrument and explore its scales on the fretboard
+          - generic [ref=f5e129]:
+            - generic [ref=f5e131]:
+              - generic [ref=f5e132]:
+                - img [ref=f5e133]
+                - heading "Guitar" [level=6] [ref=f5e135]
+                - paragraph [ref=f5e136]: Visualize scales and build tabs for electric guitar and acoustic guitar
+              - button "Explore instrument" [ref=f5e137] [cursor=pointer]: Explore instrument
+            - generic [ref=f5e139]:
+              - generic [ref=f5e140]:
+                - img [ref=f5e141]
+                - heading "Bass" [level=6] [ref=f5e143]
+                - paragraph [ref=f5e144]: Explore scale patterns and fretboard diagrams for electric and acoustic bass
+              - button "Explore instrument" [ref=f5e145] [cursor=pointer]: Explore instrument
+            - generic [ref=f5e147]:
+              - generic [ref=f5e148]:
+                - img [ref=f5e149]
+                - heading "Violin" [level=6] [ref=f5e151]
+                - paragraph [ref=f5e152]: Fretboard diagram and scales for violin — beginner to advanced
+              - button "Explore instrument" [ref=f5e153] [cursor=pointer]: Explore instrument
+            - generic [ref=f5e155]:
+              - generic [ref=f5e156]:
+                - img [ref=f5e157]
+                - heading "Ukulele" [level=6] [ref=f5e159]
+                - paragraph [ref=f5e160]: Scale diagrams and fretboard charts for soprano, concert and tenor ukulele
+              - button "Explore instrument" [ref=f5e161] [cursor=pointer]: Explore instrument
+            - generic [ref=f5e163]:
+              - generic [ref=f5e164]:
+                - img [ref=f5e165]
+                - heading "Banjo" [level=6] [ref=f5e167]
+                - paragraph [ref=f5e168]: Explore scale positions and fretboard diagrams for 5-string banjo
+              - button "Explore instrument" [ref=f5e169] [cursor=pointer]: Explore instrument
+            - generic [ref=f5e171]:
+              - generic [ref=f5e172]:
+                - img [ref=f5e173]
+                - heading "Mandolin" [level=6] [ref=f5e175]
+                - paragraph [ref=f5e176]: Scale diagrams and fretboard charts for 8-string mandolin
+              - button "Explore instrument" [ref=f5e177] [cursor=pointer]: Explore instrument
+            - generic [ref=f5e179]:
+              - generic [ref=f5e180]:
+                - img [ref=f5e181]
+                - heading "Cavaquinho" [level=6] [ref=f5e183]
+                - paragraph [ref=f5e184]: Fretboard diagram and scales for Brazilian cavaquinho
+              - button "Explore instrument" [ref=f5e185] [cursor=pointer]: Explore instrument
+  - alert [ref=f5e186]

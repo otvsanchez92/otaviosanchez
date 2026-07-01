@@ -1,69 +1,97 @@
-'use client'
-import React, { useEffect, useState } from 'react'
-import type { GitHubRepo } from '../../services/github'
-import type { NpmPackage } from '../../services/npm'
-import formatDate from '../../utils/format-date'
-import Projects from '../projects'
+import React from 'react'
 
-interface ProjectItem {
-  link: string
-  icon: string
-  text?: string
-  date: string
-  title: string
-}
+const MY_PROJECTS = [
+  {
+    link: 'https://listadolar.com.br/',
+    title: 'Lista do Lar',
+    description: 'Organize por cômodo o que precisa comprar para sua casa. Controle gastos e acompanhe o progresso.',
+    thumbnail: '/images/projects/listadolar.png',
+    favicon: 'https://www.google.com/s2/favicons?domain=listadolar.com.br&sz=32',
+    accent: '#C48B3C',
+  },
+  {
+    link: 'https://octaverse.com.br/',
+    title: 'OctaVerse',
+    description: 'Painel administrativo completo para negócios de impressão 3D. Produtos, estoque, vendas e relatórios integrados.',
+    thumbnail: '/images/projects/octaverse.png',
+    favicon: 'https://www.google.com/s2/favicons?domain=octaverse.com.br&sz=32',
+    accent: '#5652CC',
+  },
+  {
+    link: 'https://www.neckchart.com/',
+    title: 'NeckChart',
+    description: 'Editor de tablatura, diagramas de escala e visualizador de braço para guitarra, baixo e ukulele.',
+    thumbnail: '/images/projects/neckchart.png',
+    favicon: 'https://www.google.com/s2/favicons?domain=neckchart.com&sz=32',
+    accent: '#FC780B',
+  },
+]
 
 interface Props {
   titleProject: string
-  npmProjects: NpmPackage[]
-  githubProjects: GitHubRepo[]
 }
 
-export function Infos({ titleProject, npmProjects, githubProjects }: Props) {
-  const [projects, setProjects] = useState<ProjectItem[]>([])
-
-  useEffect(() => {
-    let npm: ProjectItem[] = []
-    let github: ProjectItem[] = []
-
-    if (npmProjects && npmProjects.length > 0) {
-      npm = npmProjects.map((item) => ({
-        link: item?.package?.links?.npm,
-        icon: 'npm',
-        text: item?.package?.description,
-        date: formatDate(item?.package?.date),
-        title: item?.package?.name
-      }))
-    }
-
-    if (githubProjects && githubProjects.length > 0) {
-      github = githubProjects
-        .map((item) => ({
-          link: item?.html_url,
-          icon: 'github',
-          date: formatDate(item?.pushed_at),
-          title: item?.name,
-          text: item?.description || undefined
-        }))
-        .sort((a, b) => {
-          if (a.date < b.date) return 1
-          if (a.date > b.date) return -1
-          return 0
-        })
-    }
-
-    const combined = npm.concat(github.slice(0, 7))
-    setProjects(combined)
-  }, [npmProjects, githubProjects])
-
+export function Infos({ titleProject }: Props) {
   return (
-    <section className="w-screen flex items-center py-12 bg-white">
-      <div className="w-[90%] mx-auto max-w-[1280px] flex max-md:flex-col">
-        <div className="w-full mx-auto">
-          <h3 className="m-0 text-[#5652CC] text-center font-semibold font-['PlexusSans-Bold',sans-serif] p-0 mr-[30px] mb-4">
-            {titleProject}
-          </h3>
-          <Projects items={projects} />
+    <section className="w-screen py-20 bg-white">
+      <div className="w-[90%] mx-auto max-w-[1280px]">
+        <h3 className="m-0 text-[#5652CC] text-center font-semibold font-['PlexusSans-Bold',sans-serif] mb-14 text-base tracking-widest uppercase">
+          {titleProject}
+        </h3>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {MY_PROJECTS.map((project) => (
+            <a
+              key={project.title}
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block bg-white no-underline overflow-hidden"
+            >
+              {/* Thumbnail */}
+              <div className="relative h-48 overflow-hidden bg-gray-100">
+                <img
+                  src={project.thumbnail}
+                  alt={project.title}
+                  className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                />
+                {/* accent bar on top */}
+                <div
+                  className="absolute top-0 left-0 w-full h-[3px]"
+                  style={{ backgroundColor: project.accent }}
+                />
+              </div>
+
+              {/* Content */}
+              <div className="p-6 border-b-[3px] border-transparent group-hover:border-[#5652CC] transition-all duration-300">
+                <div className="flex items-center gap-2 mb-3">
+                  <img
+                    src={project.favicon}
+                    alt=""
+                    width={16}
+                    height={16}
+                  />
+                  <span
+                    className="font-['PlexusSans-Bold',sans-serif] text-sm tracking-wide uppercase"
+                    style={{ color: project.accent }}
+                  >
+                    {project.title}
+                  </span>
+                </div>
+
+                <p className="text-[#333] font-['PlexusSans-ExtraLight',sans-serif] font-semibold text-sm leading-relaxed m-0">
+                  {project.description}
+                </p>
+
+                <div className="mt-5 flex items-center gap-2 text-xs text-[#A3A9D0] group-hover:text-[#5652CC] transition-colors duration-300">
+                  Visitar site
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-300 group-hover:translate-x-1">
+                    <path d="M7 17L17 7M17 7H7M17 7v10"/>
+                  </svg>
+                </div>
+              </div>
+            </a>
+          ))}
         </div>
       </div>
     </section>

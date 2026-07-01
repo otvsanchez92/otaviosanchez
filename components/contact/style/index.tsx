@@ -59,7 +59,7 @@ export const Icon = styled.img`
 `;
 
 export const Link = styled.a`
-    color: ${(props) => props.theme.colors?.textAlternative};
+    color: ${(props) => props.theme.colors?.warning};
 `;
 
 export const Title = styled.h3`

@@ -10,15 +10,8 @@ import { Footer } from '../footer'
 import { Content } from '../content'
 import { LoadingPage } from '../loading-page'
 import calcAge from '../../utils/age'
-import type { GitHubRepo } from '../../services/github'
-import type { NpmPackage } from '../../services/npm'
 
-interface HomeClientProps {
-  githubProjects: GitHubRepo[]
-  npmProjects: NpmPackage[]
-}
-
-export default function HomeClient({ githubProjects, npmProjects }: HomeClientProps) {
+export default function HomeClient() {
   const [activeEffect, setActiveEffect] = useState(true)
 
   useEffect(() => {
@@ -62,16 +55,12 @@ export default function HomeClient({ githubProjects, npmProjects }: HomeClientPr
           <About
             title="Quem sou?"
             body={[
-              'Sou desenvolvedor desde de 2013, possuo experiência com diversas tecnologias web e na criação de sites e sistemas web. Busco sempre estar conectado a novas tendências e inovações tecnológicas.',
-              'Bacharel em Ciência e Tecnologia pela Universidade Federal do ABC, um curso multidisciplinar que me permitiu abrir a mente e a buscar novos horizontes através da tecnologia da informação.',
-              `Atualmente tenho ${calcAge(new Date('1992-10-09'))} anos, moro em São Paulo, amo futebol, filmes, séries, animes e games.`
+              'Engenheiro de Software Sênior com mais de 10 anos de experiência em desenvolvimento front-end e full stack. Ao longo da carreira, atuei em projetos de grande escala — de sistemas bancários a plataformas de e-commerce — entregando interfaces de alta performance com React.js, Node.js e AWS.',
+              'Hoje desenvolvo funcionalidades estratégicas com foco em escalabilidade e experiência do usuário, e também crio automações inteligentes com IA para otimizar processos e aumentar produtividade.',
+              `Bacharel em Ciência e Tecnologia pela UFABC, MBA em Negócios Digitais e E-commerce e atualmente cursando pós-graduação em User Experience. Tenho ${calcAge(new Date('1992-10-09'))} anos, moro em São Paulo e sou apaixonado por tecnologia, futebol, filmes, séries e games.`
             ]}
           />
-          <Infos
-            titleProject="Alguns dos Meus Projetos"
-            npmProjects={npmProjects}
-            githubProjects={githubProjects}
-          />
+          <Infos titleProject="Alguns dos Meus Projetos" />
           <Footer>
             <Contact
               socialNetwork={[

@@ -4,7 +4,7 @@ interface Item {
   link: string
   icon: string
   text?: string
-  date: string
+  date?: string
   title: string
 }
 
@@ -18,6 +18,15 @@ const renderIcon = (icon: string) => {
       return (
         <div className="text-[#A3A9D0] font-['PlexusSans-Regular']">
           <img src="/images/icons/github.svg" title={icon} alt={icon} width={50} height={50} className="w-[50px] inline-block" />
+        </div>
+      )
+    case 'web':
+      return (
+        <div className="text-[#A3A9D0] font-['PlexusSans-Regular']">
+          <svg width={50} height={50} viewBox="0 0 24 24" fill="none" stroke="#A3A9D0" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
         </div>
       )
     default:
@@ -41,7 +50,7 @@ export function Projects({ items }: Props) {
           <a href={item.link} title={item.text} target="_blank" rel="noreferrer">
             <h2>{item.title}</h2>
             {item.text && <p>{item.text}</p>}
-            <p className="pt-2 text-xs">{item.date}</p>
+            {item.date && <p className="pt-2 text-xs">{item.date}</p>}
           </a>
         </div>
       ))}

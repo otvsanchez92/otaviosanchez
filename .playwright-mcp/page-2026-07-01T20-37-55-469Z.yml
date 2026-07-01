@@ -1,0 +1,70 @@
+- generic [active] [ref=f4e1]:
+  - generic [ref=f4e2]:
+    - banner [ref=f4e3]:
+      - generic [ref=f4e4]:
+        - generic [ref=f4e5]:
+          - img "Polvo fofo animado" [ref=f4e6]
+          - generic [ref=f4e17]: OctaVerse
+        - link "Acessar painel" [ref=f4e18] [cursor=pointer]:
+          - /url: /login
+    - generic [ref=f4e20]:
+      - generic [ref=f4e21]: Plataforma de gestão multi-loja
+      - heading "Gerencie todas as suas lojas em um só lugar." [level=1] [ref=f4e23]:
+        - text: Gerencie todas as suas
+        - text: lojas em um só lugar.
+      - paragraph [ref=f4e24]: OctaVerse é um painel administrativo completo para negócios de impressão 3D que vendem em múltiplas plataformas. Produtos, estoque, vendas, fila, relatórios — tudo integrado.
+      - link "Acessar painel" [ref=f4e25] [cursor=pointer]:
+        - /url: /login
+        - text: Acessar painel
+        - img [ref=f4e26]
+      - generic [ref=f4e28]:
+        - generic [ref=f4e29]: Integra com
+        - generic [ref=f4e30]: Shopee
+        - generic [ref=f4e31]: Mercado Livre
+        - generic [ref=f4e32]: Amazon
+        - generic [ref=f4e33]: Magalu
+    - generic [ref=f4e35]:
+      - generic [ref=f4e36]:
+        - heading "Tudo que você precisa" [level=2] [ref=f4e37]
+        - paragraph [ref=f4e38]: Módulos integrados para o dia a dia do seu negócio.
+      - generic [ref=f4e39]:
+        - generic [ref=f4e40]:
+          - img [ref=f4e42]
+          - heading "Vendas & Margem" [level=3] [ref=f4e44]
+          - paragraph [ref=f4e45]: Registre vendas de múltiplas plataformas e veja o lucro real de cada pedido em tempo real.
+        - generic [ref=f4e46]:
+          - img [ref=f4e48]
+          - heading "Estoque & Produção" [level=3] [ref=f4e50]
+          - paragraph [ref=f4e51]: Controle unidades disponíveis, registre produções e receba alertas de estoque mínimo.
+        - generic [ref=f4e52]:
+          - img [ref=f4e54]
+          - heading "Relatórios & Metas" [level=3] [ref=f4e56]
+          - paragraph [ref=f4e57]: Acompanhe o desempenho mensal, defina metas e exporte relatórios completos em CSV.
+        - generic [ref=f4e58]:
+          - img [ref=f4e60]
+          - heading "Clientes & CRM" [level=3] [ref=f4e62]
+          - paragraph [ref=f4e63]: Mantenha uma base de clientes com histórico de compras e informações de contato.
+        - generic [ref=f4e64]:
+          - img [ref=f4e66]
+          - heading "Custos & Investimentos" [level=3] [ref=f4e68]
+          - paragraph [ref=f4e69]: Lance despesas por categoria, planeje investimentos e acompanhe o fluxo de caixa.
+        - generic [ref=f4e70]:
+          - img [ref=f4e72]
+          - heading "QR Code & Etiquetas" [level=3] [ref=f4e74]
+          - paragraph [ref=f4e75]: Gere e escaneie QR codes para agilizar o controle de estoque, fila e materiais.
+    - generic [ref=f4e77]:
+      - img "Polvo fofo animado" [ref=f4e79]
+      - heading "Por que OctaVerse?" [level=2] [ref=f4e90]
+      - paragraph [ref=f4e91]: Assim como o polvo — com inteligência singular e múltiplos braços sempre em movimento — o OctaVerse foi criado para quem opera em várias frentes ao mesmo tempo e precisa de clareza total sobre o negócio.
+      - paragraph [ref=f4e92]: Desenvolvido especificamente para negócios de impressão 3D, o sistema unifica o controle de produtos, materiais, produção e finanças em uma única interface — sem planilhas, sem palpites.
+      - link "Acessar painel" [ref=f4e93] [cursor=pointer]:
+        - /url: /login
+        - text: Acessar painel
+        - img [ref=f4e94]
+    - contentinfo [ref=f4e96]:
+      - generic [ref=f4e97]:
+        - generic [ref=f4e98]:
+          - img "Polvo fofo animado" [ref=f4e99]
+          - generic [ref=f4e110]: OctaVerse
+        - paragraph [ref=f4e111]: © 2026 OctaVerse. Uso interno.
+  - alert [ref=f4e112]

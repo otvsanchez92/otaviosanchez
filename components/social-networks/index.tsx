@@ -24,17 +24,19 @@ const renderIcon = (icon: string) => {
 
 export function SocialNetworks({ items }: Props) {
   return (
-    <nav className="fixed right-[10px] top-[30%] max-md:invisible">
-      <div className="h-[30px] w-[75px] absolute top-[-60px] right-[-17px] rotate-90">
-        <h5 className="m-0">Me encontre</h5>
-      </div>
-      <ul className="p-0 m-0">
+    <nav className="fixed right-4 top-1/2 -translate-y-1/2 flex flex-col items-center gap-3 max-md:hidden z-[9999]">
+      <span
+        className="text-[#A3A9D0] text-[10px] tracking-widest uppercase font-['PlexusSans-Regular']"
+        style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
+      >
+        Me encontre
+      </span>
+      <div className="w-px h-6 bg-[#A3A9D0] opacity-50" />
+      <ul className="p-0 m-0 flex flex-col gap-3">
         {items?.map((item: Item) => (
-          <li key={item.link} className="list-none hover:animate-[wiggle_0.5s_linear] hover:opacity-80">
+          <li key={item.link} className="list-none hover:opacity-60 transition-opacity">
             <a href={item.link} title={item.text}>
-              <div className="text-[#A3A9D0] font-['PlexusSans-Regular']">
-                {renderIcon(item.icon)}
-              </div>
+              {renderIcon(item.icon)}
             </a>
           </li>
         ))}
