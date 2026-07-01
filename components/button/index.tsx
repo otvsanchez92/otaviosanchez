@@ -18,7 +18,7 @@ export function Button({ children, onClick, type = 'default', href, target, 'dat
   const typeClasses = {
     default: 'bg-white text-[#333333] hover:opacity-70',
     alternative: 'bg-[#5652CC] text-white hover:bg-[#33317a]',
-    transparent: 'bg-transparent text-[#333333] border border-[#333333] hover:opacity-70',
+    transparent: 'bg-transparent text-[#5652CC] border border-[#5652CC] hover:bg-[#5652CC] hover:text-white transition-colors duration-300',
   }
 
   if (href) {

@@ -38,19 +38,19 @@ const SERVICES = [
   {
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="3"/>
-        <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
+        <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
       </svg>
     ),
-    title: 'Consultoria Front-End',
-    description: 'Revisão de arquitetura, performance e boas práticas para times que querem evoluir sua base de código.',
+    title: 'E-commerce',
+    description: 'Desenvolvimento e otimização de lojas virtuais com experiência nos maiores marketplaces da América Latina.',
     accent: '#FC780B',
   },
 ]
 
 export function Services() {
   return (
-    <section id="servicos" className="w-screen py-20 bg-[#efefef] relative">
+    <section id="servicos" className="w-screen py-20 bg-white relative">
       <div className="w-[90%] mx-auto max-w-[1280px]">
         <h3 className="m-0 text-[#5652CC] text-center font-semibold font-['PlexusSans-Bold',sans-serif] mb-14 text-base tracking-widest uppercase">
           O que eu faço
@@ -60,7 +60,7 @@ export function Services() {
           {SERVICES.map((service) => (
             <div
               key={service.title}
-              className="group bg-[#efefef] p-10 flex gap-6 hover:bg-white transition-colors duration-300"
+              className="group bg-white p-10 flex gap-6 hover:bg-[#f7f7f9] transition-colors duration-300"
             >
               {/* Icon */}
               <div
@@ -96,7 +96,7 @@ export function Services() {
         <div className="mt-12 text-center">
           <a
             href="#contato"
-            className="inline-block bg-[#5652CC] text-white px-10 py-4 font-['PlexusSans-Bold',sans-serif] text-sm tracking-wide hover:bg-[#33317a] transition-colors duration-300 no-underline"
+            className="inline-block bg-[#5652CC] !text-white px-10 py-4 font-['PlexusSans-Bold',sans-serif] text-sm tracking-wide hover:bg-[#33317a] transition-colors duration-300 no-underline"
           >
             Vamos conversar →
           </a>
