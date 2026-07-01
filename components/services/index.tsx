@@ -95,10 +95,10 @@ export function Services() {
         {/* CTA */}
         <div className="mt-12 text-center">
           <a
-            href="#contato"
+            href="/cotacao"
             className="inline-block bg-[#5652CC] !text-white px-10 py-4 font-['PlexusSans-Bold',sans-serif] text-sm tracking-wide hover:bg-[#33317a] transition-colors duration-300 no-underline"
           >
-            Vamos conversar →
+            Solicitar cotação →
           </a>
         </div>
       </div>
