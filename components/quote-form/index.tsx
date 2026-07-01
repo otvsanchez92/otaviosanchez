@@ -614,8 +614,8 @@ export default function QuoteForm() {
   const handleBack = () => { if (step > 1) setStep((s) => s - 1) }
   const handleSubmit = () => {
     if (!canProceed()) return
-    const phone = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? ''
-    if (phone) window.open(`https://wa.me/${phone}?text=${encodeURIComponent(formatWhatsAppMessage(formData))}`, '_blank')
+    const phone = '5511991000880'
+    window.open(`https://wa.me/${phone}?text=${encodeURIComponent(formatWhatsAppMessage(formData))}`, '_blank')
     setSubmitted(true)
   }
 
