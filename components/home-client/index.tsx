@@ -9,6 +9,7 @@ import { Contact } from '../contact'
 import { Footer } from '../footer'
 import { Content } from '../content'
 import { LoadingPage } from '../loading-page'
+import { Services } from '../services'
 import calcAge from '../../utils/age'
 
 export default function HomeClient() {
@@ -33,6 +34,7 @@ export default function HomeClient() {
             items={[
               { text: 'Eu', link: '/' },
               { text: 'Sobre', link: '#sobre' },
+              { text: 'Serviços', link: '#servicos' },
               { text: 'Contato', link: '#contato' }
             ]}
             title="OS."
@@ -55,11 +57,12 @@ export default function HomeClient() {
           <About
             title="Quem sou?"
             body={[
-              'Engenheiro de Software Sênior com mais de 10 anos de experiência em desenvolvimento front-end e full stack. Ao longo da carreira, atuei em projetos de grande escala — de sistemas bancários a plataformas de e-commerce — entregando interfaces de alta performance com React.js, Node.js e AWS.',
+              'Engenheiro de Software Sênior com mais de 10 anos de experiência em desenvolvimento front-end e full stack. Ao longo da carreira, atuei em projetos de grande escala — de sistemas bancários a plataformas de e-commerce — entregando interfaces de alta performance com React.js, Node.js e TypeScript.',
               'Hoje desenvolvo funcionalidades estratégicas com foco em escalabilidade e experiência do usuário, e também crio automações inteligentes com IA para otimizar processos e aumentar produtividade.',
               `Bacharel em Ciência e Tecnologia pela UFABC, MBA em Negócios Digitais e E-commerce e atualmente cursando pós-graduação em User Experience. Tenho ${calcAge(new Date('1992-10-09'))} anos, moro em São Paulo e sou apaixonado por tecnologia, futebol, filmes, séries e games.`
             ]}
           />
+          <Services />
           <Infos titleProject="Alguns dos Meus Projetos" />
           <Footer>
             <Contact

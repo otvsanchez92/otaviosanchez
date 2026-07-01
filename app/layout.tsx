@@ -4,14 +4,14 @@ import './globals.css'
 import { Providers } from './providers'
 
 export const metadata: Metadata = {
-  title: 'Otávio Sanchez — Engenheiro de Software Sênior',
-  description: 'Engenheiro de Software com 10+ anos de experiência. Criador do Lista do Lar, OctaVerse e NeckChart. Especialista em React, Node.js e AWS.',
+  title: 'Otávio Sanchez — Desenvolvedor Web',
+  description: 'Engenheiro de Software com 10+ anos de experiência. Criador do Lista do Lar, Lista do Lar, OctaVerse, NeckChart dentre outros projetos.',
   keywords: ['desenvolvedor web', 'engenheiro de software', 'react', 'node.js', 'front-end', 'full stack', 'São Paulo'],
   authors: [{ name: 'Otávio Sanchez' }],
   metadataBase: new URL('https://otaviosanchez.com'),
   openGraph: {
-    title: 'Otávio Sanchez — Engenheiro de Software Sênior',
-    description: 'Engenheiro de Software com 10+ anos de experiência. Criador do Lista do Lar, OctaVerse e NeckChart.',
+    title: 'Otávio Sanchez — Desenvolvedor Web',
+    description: 'Engenheiro de Software com 10+ anos de experiência. Criador do Lista do Lar, OctaVerse, NeckChart dentre outros projetos.',
     url: 'https://otaviosanchez.com',
     siteName: 'Otávio Sanchez',
     locale: 'pt_BR',
@@ -19,8 +19,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Otávio Sanchez — Engenheiro de Software Sênior',
-    description: 'Engenheiro de Software com 10+ anos de experiência. Criador do Lista do Lar, OctaVerse e NeckChart.',
+    title: 'Otávio Sanchez — Desenvolvedor Web',
+    description: 'Engenheiro de Software com 10+ anos de experiência. Criador do Lista do Lar, OctaVerse, NeckChart dentre outros projetos.',
   },
   icons: {
     apple: [

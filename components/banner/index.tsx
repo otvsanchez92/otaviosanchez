@@ -87,11 +87,18 @@ export function Banner({ title, infos }: Props) {
             </div>
           </article>
 
-          <Button
-            onClick={() => (window.location.href = '#sobre')}
-            type="alternative">
-            Ver Mais
-          </Button>
+          <div className="flex gap-4 flex-wrap">
+            <Button
+              onClick={() => (window.location.href = '#contato')}
+              type="default">
+              Fale comigo
+            </Button>
+            <Button
+              onClick={() => (window.location.href = '#sobre')}
+              type="transparent">
+              Ver Mais
+            </Button>
+          </div>
         </div>
 
         {/* Right content - image */}

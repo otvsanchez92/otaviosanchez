@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og'
 
 export const runtime = 'edge'
-export const alt = 'Otávio Sanchez — Engenheiro de Software Sênior'
+export const alt = 'Otávio Sanchez — Desenvolvedor Web'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
@@ -28,7 +28,7 @@ export default function OGImage() {
         {/* Main content */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
           <div style={{ fontSize: 20, color: '#A3A9D0', letterSpacing: 6, textTransform: 'uppercase' }}>
-            Engenheiro de Software Sênior
+            Desenvolvedor Web
           </div>
           <div style={{ fontSize: 88, fontWeight: 800, color: '#ffffff', lineHeight: 1, letterSpacing: -2 }}>
             Otávio
@@ -48,7 +48,7 @@ export default function OGImage() {
           </div>
           <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
             <div style={{ width: 10, height: 10, backgroundColor: '#FC780B', borderRadius: '50%' }} />
-            <div style={{ fontSize: 16, color: '#ffffff', opacity: 0.6 }}>React · Node.js · AWS</div>
+            <div style={{ fontSize: 16, color: '#ffffff', opacity: 0.6 }}>React · Node.js · TypeScript</div>
           </div>
         </div>
       </div>
