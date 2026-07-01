@@ -1,11 +1,12 @@
 import React from 'react'
+import Image from 'next/image'
 
 const MY_PROJECTS = [
   {
     link: 'https://listadolar.com.br/',
     title: 'Lista do Lar',
     description: 'Organize por cômodo o que precisa comprar para sua casa. Controle gastos e acompanhe o progresso.',
-    thumbnail: '/images/projects/listadolar.png',
+    thumbnail: '/images/projects/listadolar.jpg',
     favicon: 'https://www.google.com/s2/favicons?domain=listadolar.com.br&sz=32',
     accent: '#C48B3C',
   },
@@ -13,7 +14,7 @@ const MY_PROJECTS = [
     link: 'https://octaverse.com.br/',
     title: 'OctaVerse',
     description: 'Painel administrativo completo para negócios de impressão 3D. Produtos, estoque, vendas e relatórios integrados.',
-    thumbnail: '/images/projects/octaverse.png',
+    thumbnail: '/images/projects/octaverse.jpg',
     favicon: 'https://www.google.com/s2/favicons?domain=octaverse.com.br&sz=32',
     accent: '#5652CC',
   },
@@ -21,7 +22,7 @@ const MY_PROJECTS = [
     link: 'https://www.neckchart.com/',
     title: 'NeckChart',
     description: 'Editor de tablatura, diagramas de escala e visualizador de braço para guitarra, baixo e ukulele.',
-    thumbnail: '/images/projects/neckchart.png',
+    thumbnail: '/images/projects/neckchart.jpg',
     favicon: 'https://www.google.com/s2/favicons?domain=neckchart.com&sz=32',
     accent: '#FC780B',
   },
@@ -50,14 +51,16 @@ export function Infos({ titleProject }: Props) {
             >
               {/* Thumbnail */}
               <div className="relative h-48 overflow-hidden bg-gray-100">
-                <img
+                <Image
                   src={project.thumbnail}
                   alt={project.title}
-                  className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                  fill
+                  className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, 33vw"
                 />
                 {/* accent bar on top */}
                 <div
-                  className="absolute top-0 left-0 w-full h-[3px]"
+                  className="absolute top-0 left-0 w-full h-[3px] z-10"
                   style={{ backgroundColor: project.accent }}
                 />
               </div>

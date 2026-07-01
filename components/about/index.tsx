@@ -1,5 +1,6 @@
 'use client'
 import React from 'react'
+import Image from 'next/image'
 import { useParallax } from 'react-scroll-parallax'
 
 interface Props {
@@ -62,11 +63,14 @@ export function About({ title, body }: Props) {
 
           {/* Photo */}
           <div ref={layerPhoto.ref} className="relative z-[2] max-w-[340px] w-full">
-            <img
-              src="/images/otavio-sanchez.png"
+            <Image
+              src="/images/otavio-sanchez.jpg"
               alt="Foto do Otávio Sanchez"
               title="Otávio Sanchez"
-              className="w-full"
+              width={340}
+              height={420}
+              priority
+              className="w-full h-auto"
               style={{ filter: 'drop-shadow(0 16px 40px rgba(86,82,204,0.3))' }}
             />
           </div>
